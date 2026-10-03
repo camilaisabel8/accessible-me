@@ -24,17 +24,20 @@
     </ul>
 </nav>
 
-  <div class="container">
+ <!-- schema identifies Jam Box Studios as an organization
+and describes the business information on the page -->
+<div class="container" itemscope itemtype="https://schema.org/Organization">
 
      <!-- changed this div to a header because it contains
      the website heading and navigation -->
        <header class="site-header">
 
-            <h1>Jam Box Studios</h1>
+            <h1 itemprop="name">Jam Box Studios</h1>
 
             <!-- nav is more semantic than using a regular div
             for the main navigation -->
-            <nav class="main-nav" id="mainnav">
+            <!-- aria-label gives the navigation a clear name for screen readers -->
+    <nav class="main-nav" id="mainnav" aria-label="Main Navigation">
                 <ul>
                     <li><a href="#">Home</a></li>
                     <li><a href="#">Products</a></li>
@@ -67,7 +70,10 @@
             </p>
 
 
-       <section class="owner">
+       <!-- aria-labelledby connects the section with its heading -->
+        <section class="owner" aria-labelledby="owner-heading">
+
+          <h2 id="owner-heading">Meet the Owner</h2>
 
             <!-- changed this heading from h1 to h2 -->
             <h2>Meet the Owner</h2>
@@ -75,27 +81,28 @@
               <ul>
                     <li>Name: John Doe</li>
                     <li>Title: CEO</li>
-                    <li>Email: johnjoe@jambox.ca</li>
-                    <li>Phone: 613-000-0000</li>
+                    <li>Email: <span itemprop="email">johnjoe@jambox.ca</span></li>
+                    <li>Phone: <span itemprop="telephone">613-000-0000</span></li>
               </ul>
 
               <h3>Address</h3>
 
             <p>
-                    Jambox Studios
-                    123 Guitar Road,
-                    Musicville, Danceistan
-                    B3T 0L0
-              </p>
+                   <p itemprop="address">
+                        Jambox Studios<br>
+                        123 Guitar Road,<br>
+                        Musicville, Danceistan<br>
+                        B3T 0L0
+                  </p>
+            </p>
 
        </section>
 
 
-        <section class="contact-section">
+       <!-- the section gets its accessible name from the Contact Us heading -->
+      <section class="contact-section" aria-labelledby="contact-heading">
 
-            <!-- changed this heading from h1 to h2
-              because it is another section of the page -->
-             <h2>Contact Us</h2>
+         <h2 id="contact-heading">Contact Us</h2>
 
           <form action="thanks.html">
 
