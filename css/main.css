@@ -1,6 +1,6 @@
 body {
   font-family: 'Roboto', Helvetica, sans-serif;
-  background-color: grey;
+  background-color: rgba(82, 137, 87, 0.523);
   margin: 0;
   padding: 0;
 }
@@ -14,6 +14,13 @@ h6 {
   font-family: 'Stick No Bills', 'Roboto', Helvetica, sans-serif;
 }
 
+/*I added a bit of styling*/
+h1 {
+  font-size: 3rem;
+  margin: 3rem auto;
+  text-align: center;
+}
+
 .container {
   max-width: 1080px;
   margin: 0 auto;
@@ -22,6 +29,13 @@ h6 {
 
 img {
   width: 100%;
+}
+
+/*I added a bit of styling*/
+nav.main-nav {
+  background-color: rgba(12, 33, 14, 0.523);
+  padding: 1rem;
+  color: rgba(255, 255, 255, 0.841);
 }
 
 .main-nav ul {
@@ -42,6 +56,13 @@ img {
   color: inherit;
   text-decoration: none;
   font-size: 1.25rem;
+}
+/*I added a bit of styling*/
+.main-content >h2 {
+  font-size: 2rem;
+  margin: 2rem auto;
+  text-align: center;
+  color: rgb(0, 0, 0);
 }
 
 form input,

@@ -16,28 +16,41 @@
 </head>
 
 <body>
-  <!-- skip links help keyboard users move quickly to important parts of the page -->
-<nav class="skiplinks">
-    <ul>
-        <li><a href="#mainnav">Skip to Main Navigation</a></li>
-        <li><a href="#maincont">Skip to Main Content</a></li>
-    </ul>
-</nav>
 
- <!-- schema identifies Jam Box Studios as an organization
-and describes the business information on the page -->
-<div class="container" itemscope itemtype="https://schema.org/Organization">
+    <!-- skip links help keyboard users move quickly to important parts of the page -->
+    <nav class="skiplinks">
+        <ul>
+            <li><a href="#mainnav">Skip to Main Navigation</a></li>
+            <li><a href="#maincont">Skip to Main Content</a></li>
+        </ul>
+    </nav>
 
-     <!-- changed this div to a header because it contains
-     the website heading and navigation -->
-       <header class="site-header">
+
+    <!-- ai prompt:
+    where would basic Organization schema information make sense in this HTML?
+    I used this to identify the business name and contact information. -->
+
+    <!-- schema identifies Jam Box Studios as an organization
+    and describes the business information on the page -->
+    <div class="container" itemscope itemtype="https://schema.org/Organization">
+
+
+        <!-- ai prompt:
+        identify the main semantic accessibility problems in this HTML.
+        I used this to check where semantic elements such as header, nav,
+        main, section and footer could replace regular divs. -->
+
+        <!-- changed this div to a header because it contains
+        the website heading and navigation -->
+        <header class="site-header">
 
             <h1 itemprop="name">Jam Box Studios</h1>
 
             <!-- nav is more semantic than using a regular div
             for the main navigation -->
+
             <!-- aria-label gives the navigation a clear name for screen readers -->
-    <nav class="main-nav" id="mainnav" aria-label="Main Navigation">
+            <nav class="main-nav" id="mainnav" aria-label="Main Navigation">
                 <ul>
                     <li><a href="#">Home</a></li>
                     <li><a href="#">Products</a></li>
@@ -46,12 +59,15 @@ and describes the business information on the page -->
                 </ul>
             </nav>
 
-    <img src="https://picsum.photos/1200/900" class="banner" alt="Jam Box Studios banner image showing a guitar and a microphone on a stage with lights in the background">
+            <!-- the banner is decorative, so the empty alt allows
+            screen readers to ignore it -->
+            <img src="https://picsum.photos/1200/900" class="banner" alt="">
 
-       </header>
+        </header>
+
 
         <!-- main is used for the main content of the page -->
-      <main class="main-content" id="maincont"> 
+        <main class="main-content" id="maincont">
 
             <h2>Welcome to Jam Box</h2>
 
@@ -70,60 +86,67 @@ and describes the business information on the page -->
             </p>
 
 
-       <!-- aria-labelledby connects the section with its heading -->
-        <section class="owner" aria-labelledby="owner-heading">
+            <!-- ai prompt:
+            how can I use basic ARIA labels for sections of this page?
+            I used aria-labelledby to connect each section to its heading. -->
 
-          <h2 id="owner-heading">Meet the Owner</h2>
+            <!-- aria-labelledby connects the section with its heading -->
+            <section class="owner" aria-labelledby="owner-heading">
 
-            <!-- changed this heading from h1 to h2 -->
-            <h2>Meet the Owner</h2>
+                <!-- changed this heading from h1 to h2
+                to keep the heading order clear -->
+                <h2 id="owner-heading">Meet the Owner</h2>
 
-              <ul>
+                <ul>
                     <li>Name: John Doe</li>
                     <li>Title: CEO</li>
                     <li>Email: <span itemprop="email">johnjoe@jambox.ca</span></li>
                     <li>Phone: <span itemprop="telephone">613-000-0000</span></li>
-              </ul>
+                </ul>
 
-              <h3>Address</h3>
+                <h3>Address</h3>
 
-            <p>
-                   <p itemprop="address">
-                        Jambox Studios<br>
-                        123 Guitar Road,<br>
-                        Musicville, Danceistan<br>
-                        B3T 0L0
-                  </p>
-            </p>
+                <p itemprop="address">
+                    Jambox Studios<br>
+                    123 Guitar Road,<br>
+                    Musicville, Danceistan<br>
+                    B3T 0L0
+                </p>
 
-       </section>
+            </section>
 
 
-       <!-- the section gets its accessible name from the Contact Us heading -->
-      <section class="contact-section" aria-labelledby="contact-heading">
+            <!-- the section gets its accessible name from the Contact Us heading -->
+            <section class="contact-section" aria-labelledby="contact-heading">
 
-         <h2 id="contact-heading">Contact Us</h2>
+                <h2 id="contact-heading">Contact Us</h2>
 
-          <form action="thanks.html">
 
-                   <!-- each form field has a label connected with for and id -->
-                  <label for="fullname">Full Name</label>
-                  <input type="text" id="fullname" name="fullname">
+                <!-- ai prompt:
+                how can I make this basic HTML form more accessible?
+                I used this to connect labels to each field with for and id
+                and to use the correct email input type. -->
 
-                  <label for="email">Email</label>
-                  <input type="email" id="email" name="email">
+                <form action="thanks.html">
 
-                  <label for="subject">Subject</label>
-                  <input type="text" id="subject" name="subject">
+                    <!-- each form field has a label connected with for and id -->
+                    <label for="fullname">Full Name</label>
+                    <input type="text" id="fullname" name="fullname">
 
-                  <label for="message">Your Message</label>
-                  <textarea id="message" name="message"></textarea>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email">
 
-                  <button type="submit">Send</button>
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject">
 
-          </form>
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message"></textarea>
 
-          </section>
+                    <button type="submit">Send</button>
+
+                </form>
+
+            </section>
 
         </main>
 
