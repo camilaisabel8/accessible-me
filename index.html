@@ -47,7 +47,6 @@
 
        </header>
 
-
         <!-- main is used for the main content of the page -->
       <main class="main-content" id="maincont"> 
 
@@ -98,21 +97,24 @@
               because it is another section of the page -->
              <h2>Contact Us</h2>
 
-                <form action="thanks.html">
+          <form action="thanks.html">
 
-                    <label>Full Name</label>
-                    <input type="text" placeholder="Full Name">
+                   <!-- each form field has a label connected with for and id -->
+                  <label for="fullname">Full Name</label>
+                  <input type="text" id="fullname" name="fullname">
 
-                    <input type="text" placeholder="Email">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" name="email">
 
-                    <input type="text" placeholder="Subject">
+                  <label for="subject">Subject</label>
+                  <input type="text" id="subject" name="subject">
 
-                    <b>Your Message</b>
-                    <textarea></textarea>
+                  <label for="message">Your Message</label>
+                  <textarea id="message" name="message"></textarea>
 
-                    <button type="submit">Send</button>
+                  <button type="submit">Send</button>
 
-                </form>
+          </form>
 
           </section>
 
